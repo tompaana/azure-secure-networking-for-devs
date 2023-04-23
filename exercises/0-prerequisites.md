@@ -38,7 +38,7 @@ Let's provision our first resources in Azure!
     >
     > There are three locations (regions) we will be using during the exercises as described in the table below:
     >
-    > | Regions | Parameter/variable in scripts | Default location |
+    > | Region | Parameter/variable in scripts | Default location |
     > | ------- | -------------------- | ---------------- |
     > | EU | `PrimaryLocation` | West Europe (`westeurope`) |
     > | US | `SecondaryLocation` | East US (`eastus`) |

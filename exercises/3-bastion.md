@@ -15,7 +15,7 @@ Let's fix that!
 ## Virtual machine
 
 1. Create [network security group (NSG)](https://learn.microsoft.com/azure/virtual-network/network-security-groups-overview) in the **shared location**.
-1. Add rule to the NSG to deny all inbound traffic.
+1. Add rule to the NSG to deny all inbound traffic to destination port 80.
 1. Create a Windows desktop virtual machine, in the **shared location**, with no public IP or public inbound ports. Assign the network security group to the virtual machine.
 
 > Naming recommendations:
