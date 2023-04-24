@@ -21,8 +21,6 @@ Let's fix that!
 >
 > * NSG: `nsg-jumpbox-{team name}-dev`
 > * VM: `vm{team name}`
-> * USER: jervelund
-> * PW: 2i8eTe15R7fa
 
 ## Bastion
 
