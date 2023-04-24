@@ -1,5 +1,5 @@
 /*
-  Deploys Cloudburst infrastructure resources.
+  Deploys infrastructure resources.
 */
 
 param vnetlocations array = ['swedencentral', 'westeurope','eastus']
