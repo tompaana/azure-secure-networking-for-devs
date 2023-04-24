@@ -29,7 +29,6 @@ So, umm... we created a virtual machine we can't access. What was the point of t
 The solution:
 
 1. Create a subnet for Azure Bastion in the VNET in the **shared location** - the name and size need to be specific and you must figure out what they are
-1. Add rule to the NSG we created earlier to deny all inbound traffic except from the IP range of the Azure Bastion subnet.
 1. Create a public IP address in the **shared location**
 1. Create [Azure Bastion](https://learn.microsoft.com/azure/bastion/bastion-overview) resource using the newly created public IP address and add it to the virtual network
 
@@ -38,6 +37,6 @@ The solution:
 > * Public IP address: `pip-bastion-{team name}-dev`
 > * Bastion: `bas-{team name}-dev`
 
-Login to the virtual machine using Azure Bastion and verify that your Private DNS zones work by running the following command in the command prompt/PowerShell: `nslookup app-<your team name>-dev-eu.azurewebsites.net`. You should see an IP in the private IP address space.
+Login to the virtual machine using Azure Bastion and verify that your Private DNS zones work by running the following command in the command prompt/PowerShell: `nslookup app-<your team name>-dev-eu.azurewebsites.net`. You should see an IP in the private IP address space. Try accessing the web app in the browser of your jumpbox - does that work? Should it?
 
 This exercise can only be completed by installing Solitaire and winning the game. Extra points for pro mode i.e., allowing only one time to go through the deck.
