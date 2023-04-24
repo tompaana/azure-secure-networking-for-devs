@@ -62,3 +62,5 @@ Disable access to app services and storage accounts:
 1. The app services should have access restrictions and private endpoints **on**
 
 Enable the virtual network (VNET) integration for the outbound traffic for both EU and US web apps.
+
+Launch any of the two web apps (e.g., `https://app-<your team name>-dev-eu.azurewebsites.net/`) in your browser. You should now be greeted with not so friendly 403 message.
