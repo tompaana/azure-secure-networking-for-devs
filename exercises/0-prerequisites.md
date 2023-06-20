@@ -54,9 +54,9 @@ Let's provision our first resources in Azure!
     1. List blobs: `https://app-<your team name>-dev-eu.azurewebsites.net/list_blobs`
     1. Repeat the steps for the app service in East US
 
-## Resources
+## Status check
 
-Resources created in resource group "`rg-{team name}-dev`":
+We shoud now have the following resources created in resource group "`rg-{team name}-dev`":
 
 | Resource type | Resource name | Default location |
 | ------------- | ------------- | ---------------- |

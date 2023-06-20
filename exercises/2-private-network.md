@@ -64,3 +64,7 @@ Disable access to app services and storage accounts:
 Enable the virtual network (VNET) integration for the outbound traffic for both EU and US web apps.
 
 Launch any of the two web apps (e.g., `https://app-<your team name>-dev-eu.azurewebsites.net/`) in your browser. You should now be greeted with not so friendly 403 message.
+
+## Status check
+
+TODO: Where are we now?

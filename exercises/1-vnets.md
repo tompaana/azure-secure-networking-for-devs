@@ -11,3 +11,7 @@ The recommended order and names below:
 1. `vnet-{team name}-dev-{US location}` in US
 
 If you have time left over, debate the existentialism of virtual networks. Are they real? Am I?
+
+## Status check
+
+TODO: Where are we now?
