@@ -60,18 +60,20 @@ az storage account create `
 Write-Output "`nCreating app service plans..."
 # https://learn.microsoft.com/cli/azure/appservice/plan?view=azure-cli-latest#az-appservice-plan-create
 
+$AppServicePlanSku = "S1"
+
 az appservice plan create `
     --name "${AppServicePlanNamePrefix}-eu" `
     --resource-group $ResourceGroupNames[1] `
     --location $PrimaryLocation `
-    --sku B1 `
+    --sku $AppServicePlanSku `
     --is-linux
 
 az appservice plan create `
     --name "${AppServicePlanNamePrefix}-us" `
     --resource-group $ResourceGroupNames[2] `
     --location $SecondaryLocation `
-    --sku B1 `
+    --sku $AppServicePlanSku `
     --is-linux
 
 Write-Output "`nCreating web apps..."
