@@ -121,7 +121,7 @@ module sharedstorageaccounts 'modules/storageAccount.bicep' = {
   name: 'stshard${teamname}${environment}${vnetlocationsacronym[0]}deployment'
 
   params: {
-    storageAccountName: 'stshared${teamname}${environment}'
+    storageAccountName: 'sthub${teamname}${environment}'
     location: vnetlocations[0]
     subnetName: 'snet-shared-${teamname}-${environment}-${vnetlocations[0]}'
     vnetName: 'vnet-${teamname}-${environment}-${vnetlocations[0]}'

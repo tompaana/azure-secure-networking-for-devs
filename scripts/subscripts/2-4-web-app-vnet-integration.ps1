@@ -2,11 +2,13 @@ param(
     [Parameter(Mandatory=$True)][string]$TeamName,
     [string]$PrimaryLocation = "westeurope",
     [string]$SecondaryLocation = "eastus",
-    [string]$SharedLocation = "swedencentral"
+    [string]$HubLocation = "swedencentral"
 )
 
 $Environment = "dev"
-$ResourceGroupName = "rg-${TeamName}-${Environment}"
+
+$ResourceGroupNameEu = "rg-${TeamName}-${Environment}-eu"
+$ResourceGroupNameUs = "rg-${TeamName}-${Environment}-us"
 
 $AppServiceNamePrefix = "app-${TeamName}-${Environment}"
 $AppServiceNameEu = "${AppServiceNamePrefix}-eu"
@@ -22,7 +24,7 @@ Write-Output "`nAdding VNET integration for app service ${AppServiceNameEu} usin
 
 az webapp vnet-integration add `
     --name $AppServiceNameEu `
-    --resource-group $ResourceGroupName `
+    --resource-group $ResourceGroupNameEu `
     --subnet $SubnetNameEu `
     --vnet $VnetNameEu `
     --skip-delegation-check false
@@ -31,7 +33,7 @@ Write-Output "`nAdding VNET integration for app service ${AppServiceNameUs} usin
 
 az webapp vnet-integration add `
     --name $AppServiceNameUs `
-    --resource-group $ResourceGroupName `
+    --resource-group $ResourceGroupNameUs `
     --subnet $SubnetNameUs `
     --vnet $VnetNameUs `
     --skip-delegation-check false

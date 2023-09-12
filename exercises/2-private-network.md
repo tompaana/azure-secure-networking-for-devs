@@ -45,7 +45,7 @@ For all 3 storage accounts and 2 web app services:
 
     > Use the following resource name pattern:
     >
-    > * Private endpoint name: `pep-{resource name}` e.g., for the shared storage account `pep-stshared{team name}dev`
+    > * Private endpoint name: `pep-{resource name}` e.g., for the hub storage account `pep-sthub{team name}dev`
     > * Network interface name: `nic-pep-{resource name}`
 
 1. Add [private DNS zone groups](https://learn.microsoft.com/azure/private-link/private-endpoint-dns#private-dns-zone-group) for the endpoints
