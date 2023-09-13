@@ -26,7 +26,7 @@ Now, on to some D-N-S-ing (if that's not a word, it darn well should be).
 
 1. Create two [private DNS zones](https://learn.microsoft.com/azure/dns/private-dns-privatednszone) for:
     1. Web apps ("`privatelink.azurewebsites.net`")
-    1. Blob storages
+    1. Blob storages ("`privatelink.blob.core.windows.net`")
 1. Link the created DNS zones to all three virtual networks with [virtual network links](https://learn.microsoft.com/azure/dns/private-dns-virtual-network-links)
 
 > **Fun fact!**
