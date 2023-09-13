@@ -18,7 +18,7 @@ $Locations = @($HubLocation, $PrimaryLocation, $SecondaryLocation)
 $Environment = "dev"
 $ResourceGroupNames = @("rg-hub-${TeamName}-${Environment}", "rg-${TeamName}-${Environment}-eu", "rg-${TeamName}-${Environment}-us")
 $StorageAccountNames = @("sthub${TeamName}${Environment}", "st${TeamName}${Environment}eu", "st${TeamName}${Environment}us")
-$AppServicePlanNamePrefix = "aps-${TeamName}-${Environment}"
+$AppServicePlanNamePrefix = "asp-${TeamName}-${Environment}"
 $AppServiceNamePrefix = "app-${TeamName}-${Environment}"
 $AppServiceNames = @("${AppServiceNamePrefix}-eu", "${AppServiceNamePrefix}-us")
 
