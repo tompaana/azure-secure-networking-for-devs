@@ -4,17 +4,17 @@ set -e
 
 TeamName=$TEAM_NAME
 HubLocation=$HUB_LOCATION
-PrimaryLocation=$PRIMARY_LOCATION
-SecondaryLocation=$SECONDARY_LOCATION
+EuLocation=$EU_LOCATION
+UsLocation=$US_LOCATION
 
 if [ -z "$TeamName" ]; then
   echo >&2 "Required parameter \"TeamName\" missing"
   exit 1
 fi
 
-echo -e "\nUsing config:\n  - Team name: ${TeamName}\n  - Hub location: ${HubLocation}\n  - Primary location: ${PrimaryLocation}\n  - Secondary location: ${SecondaryLocation}"
+echo -e "\nUsing config:\n  - Team name: ${TeamName}\n  - Hub location: ${HubLocation}\n  - EU location: ${EuLocation}\n  - US location: ${UsLocation}"
 
-Locations=("$HubLocation" "$PrimaryLocation" "$SecondaryLocation")
+Locations=("$HubLocation" "$EuLocation" "$UsLocation")
 Environment="dev"
 ResourceGroupNames=("rg-hub-${TeamName}-${Environment}" "rg-${TeamName}-${Environment}-eu" "rg-${TeamName}-${Environment}-us")
 StorageAccountNames=("sthub${TeamName}${Environment}" "st${TeamName}${Environment}eu" "st${TeamName}${Environment}us")
@@ -54,14 +54,14 @@ AppServicePlanSku="S1"
 az appservice plan create \
     --name "${AppServicePlanNamePrefix}-eu" \
     --resource-group "${ResourceGroupNames[1]}" \
-    --location $PrimaryLocation \
+    --location $EuLocation \
     --sku $AppServicePlanSku \
     --is-linux
 
 az appservice plan create \
     --name "${AppServicePlanNamePrefix}-us" \
     --resource-group "${ResourceGroupNames[2]}" \
-    --location $SecondaryLocation \
+    --location $UsLocation \
     --sku $AppServicePlanSku \
     --is-linux
 

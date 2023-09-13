@@ -56,8 +56,8 @@ Let's provision our first resources in Azure!
     >
     > | Region | Environment variable name | Default location |
     > | ------- | ------------------------ | ---------------- |
-    > | EU | `PRIMARY_LOCATION` | West Europe (`westeurope`) |
-    > | US | `SECONDARY_LOCATION` | East US (`eastus`) |
+    > | EU | `EU_LOCATION` | West Europe (`westeurope`) |
+    > | US | `US_LOCATION` | East US (`eastus`) |
     > | Hub | `HUB_LOCATION` | Sweden central (`swedencentral`)
 
     If all goes well, you should now have the [resources](#resources) deployed including the code for the web apps.

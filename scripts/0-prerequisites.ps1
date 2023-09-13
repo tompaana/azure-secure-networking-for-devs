@@ -2,8 +2,8 @@
 
 param(
     [string]$TeamName = $env:TEAM_NAME,
-    [string]$PrimaryLocation = $env:PRIMARY_LOCATION,
-    [string]$SecondaryLocation = $env:SECONDARY_LOCATION,
+    [string]$EuLocation = $env:EU_LOCATION,
+    [string]$UsLocation = $env:US_LOCATION,
     [string]$HubLocation = $env:HUB_LOCATION
 )
 
@@ -12,9 +12,9 @@ if ($TeamName.Length -lt 2) {
     exit 1
 }
 
-Write-Output "`nUsing config:`n  - Team name: ${TeamName}`n  - Hub location: ${HubLocation}`n  - Primary location: ${PrimaryLocation}`n  - Secondary location: ${SecondaryLocation}"
+Write-Output "`nUsing config:`n  - Team name: ${TeamName}`n  - Hub location: ${HubLocation}`n  - EU location: ${EuLocation}`n  - US location: ${UsLocation}"
 
-$Locations = @($HubLocation, $PrimaryLocation, $SecondaryLocation)
+$Locations = @($HubLocation, $EuLocation, $UsLocation)
 $Environment = "dev"
 $ResourceGroupNames = @("rg-hub-${TeamName}-${Environment}", "rg-${TeamName}-${Environment}-eu", "rg-${TeamName}-${Environment}-us")
 $StorageAccountNames = @("sthub${TeamName}${Environment}", "st${TeamName}${Environment}eu", "st${TeamName}${Environment}us")
@@ -46,14 +46,14 @@ az storage account create `
 az storage account create `
     --name "st${TeamName}${Environment}eu" `
     --resource-group $ResourceGroupNames[1] `
-    --location $PrimaryLocation `
+    --location $EuLocation `
     --kind StorageV2 `
     --sku Standard_LRS
 
 az storage account create `
     --name "st${TeamName}${Environment}us" `
     --resource-group $ResourceGroupNames[2] `
-    --location $SecondaryLocation `
+    --location $UsLocation `
     --kind StorageV2 `
     --sku Standard_LRS
 
@@ -65,14 +65,14 @@ $AppServicePlanSku = "S1"
 az appservice plan create `
     --name "${AppServicePlanNamePrefix}-eu" `
     --resource-group $ResourceGroupNames[1] `
-    --location $PrimaryLocation `
+    --location $EuLocation `
     --sku $AppServicePlanSku `
     --is-linux
 
 az appservice plan create `
     --name "${AppServicePlanNamePrefix}-us" `
     --resource-group $ResourceGroupNames[2] `
-    --location $SecondaryLocation `
+    --location $UsLocation `
     --sku $AppServicePlanSku `
     --is-linux
 

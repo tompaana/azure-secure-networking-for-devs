@@ -1,7 +1,7 @@
 param(
     [Parameter(Mandatory=$True)][string]$TeamName,
-    [string]$PrimaryLocation = "westeurope",
-    [string]$SecondaryLocation = "eastus",
+    [string]$EuLocation = "westeurope",
+    [string]$UsLocation = "eastus",
     [string]$HubLocation = "swedencentral"
 )
 
@@ -11,11 +11,11 @@ $ResourceGroupNameHub = "rg-hub-${TeamName}-${Environment}"
 $ResourceGroupNameEu = "rg-${TeamName}-${Environment}-eu"
 $ResourceGroupNameUs = "rg-${TeamName}-${Environment}-us"
 
-$VnetNameEu = "vnet-${TeamName}-${Environment}-${PrimaryLocation}"
-$VnetNameUs = "vnet-${TeamName}-${Environment}-${SecondaryLocation}"
+$VnetNameEu = "vnet-${TeamName}-${Environment}-${EuLocation}"
+$VnetNameUs = "vnet-${TeamName}-${Environment}-${UsLocation}"
 $VnetNameHub = "vnet-${TeamName}-${Environment}-${HubLocation}"
-$SubnetNameEu = "snet-shared-${TeamName}-${Environment}-${PrimaryLocation}"
-$SubnetNameUs = "snet-shared-${TeamName}-${Environment}-${SecondaryLocation}"
+$SubnetNameEu = "snet-shared-${TeamName}-${Environment}-${EuLocation}"
+$SubnetNameUs = "snet-shared-${TeamName}-${Environment}-${UsLocation}"
 $SubnetNameHub = "snet-shared-${TeamName}-${Environment}-${HubLocation}"
 
 $AppServiceNamePrefix = "app-${TeamName}-${Environment}"
@@ -46,7 +46,7 @@ az network private-endpoint create `
     --resource-group $ResourceGroupNameEu `
     --subnet $SubnetNameEu `
     --group-id "sites" `
-    --location $PrimaryLocation `
+    --location $EuLocation `
     --nic-name "nic-pep-${AppServiceNamePrefix}-eu" `
     --no-wait false `
     --vnet-name $VnetNameEu
@@ -60,7 +60,7 @@ az network private-endpoint create `
     --resource-group $ResourceGroupNameUs `
     --subnet $SubnetNameUs `
     --group-id "sites" `
-    --location $SecondaryLocation `
+    --location $UsLocation `
     --nic-name "nic-pep-${AppServiceNamePrefix}-us" `
     --no-wait false `
     --vnet-name $VnetNameUs
@@ -74,7 +74,7 @@ az network private-endpoint create `
     --resource-group $ResourceGroupNameEu `
     --subnet $SubnetNameEu `
     --group-id "blob" `
-    --location $PrimaryLocation `
+    --location $EuLocation `
     --nic-name "nic-pep-${StorageAccountNameEu}" `
     --no-wait false `
     --vnet-name $VnetNameEu
@@ -88,7 +88,7 @@ az network private-endpoint create `
     --resource-group $ResourceGroupNameUs `
     --subnet $SubnetNameUs `
     --group-id "blob" `
-    --location $SecondaryLocation `
+    --location $UsLocation `
     --nic-name "nic-pep-${StorageAccountNameUs}" `
     --no-wait false `
     --vnet-name $VnetNameUs

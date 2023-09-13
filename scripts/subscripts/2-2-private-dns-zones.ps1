@@ -1,7 +1,7 @@
 param(
     [Parameter(Mandatory=$True)][string]$TeamName,
-    [string]$PrimaryLocation = "westeurope",
-    [string]$SecondaryLocation = "eastus",
+    [string]$EuLocation = "westeurope",
+    [string]$UsLocation = "eastus",
     [string]$HubLocation = "swedencentral"
 )
 
@@ -18,8 +18,8 @@ $PrivateDnsZoneNames = @(
 
 $VnetNames = @(
     "vnet-${TeamName}-${Environment}-${HubLocation}",
-    "vnet-${TeamName}-${Environment}-${PrimaryLocation}",
-    "vnet-${TeamName}-${Environment}-${SecondaryLocation}"
+    "vnet-${TeamName}-${Environment}-${EuLocation}",
+    "vnet-${TeamName}-${Environment}-${UsLocation}"
 )
 
 foreach ($PrivateDnsZoneName in $PrivateDnsZoneNames) {

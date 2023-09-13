@@ -1,7 +1,7 @@
 // az appservice plan create `
 //     --name "${AppServicePlanNamePrefix}-eu" `
 //     --resource-group $ResourceGroupName `
-//     --location $PrimaryLocation `
+//     --location $EuLocation `
 //     --sku B1 `
 //     --is-linux
 

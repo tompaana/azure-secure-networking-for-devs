@@ -2,7 +2,7 @@
 
 ## Firewall
 
-Set up [Azure Firewall](https://learn.microsoft.com/azure/firewall/overview) - not the basic SKU - in the virtual network in the **shared location**.
+Set up [Azure Firewall](https://learn.microsoft.com/azure/firewall/overview) - not the basic SKU - in the virtual network in the **hub location**.
 
 ## Routing
 

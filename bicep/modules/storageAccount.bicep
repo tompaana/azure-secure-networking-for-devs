@@ -1,7 +1,7 @@
 // az storage account create `
 //     --name "st${TeamName}${Environment}us" `
 //     --resource-group $ResourceGroupName `
-//     --location $SecondaryLocation `
+//     --location $UsLocation `
 //     --kind StorageV2 `
 //     --sku Standard_LRS
 

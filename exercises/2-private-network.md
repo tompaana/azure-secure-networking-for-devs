@@ -5,7 +5,7 @@
 > In case you need to catch up, run the script to get to where we need to be now:
 >
 > ```ps1
-> .\1-vnets.ps1 -TeamName <your team name>
+> .\1-vnets.ps1
 > ```
 
 ## Subnets
@@ -13,10 +13,8 @@
 Our virtual networks sure feel empty and sad. Let's cheer them up by giving them subnets!
 
 1. In the "shared" virtual network - the one by default in Sweden (heja Sverige!) - create a subnet for shared resources: `snet-shared-{team name}-dev-{location}`, span of 64 IP addresses should be plenty for our needs
-        <!-- * Add service endpoint for storage -->
 1. In the both two other virtual networks, create:
     1. `snet-shared-{team name}-dev-{location}` with the range of 128 addresses
-        <!-- * Add service endpoint for storage -->
     1. `snet-apps-{team name}-dev-{location}` with the range of 128 addresses
         * Delegate this subnet for `Microsoft.Web/serverFarms`
 

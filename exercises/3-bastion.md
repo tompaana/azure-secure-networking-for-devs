@@ -14,8 +14,8 @@ Let's fix that!
 
 ## Virtual machine
 
-1. Create [network security group (NSG)](https://learn.microsoft.com/azure/virtual-network/network-security-groups-overview) in the **shared location**.
-1. Create a Windows desktop virtual machine, in the **shared location**, with no public IP or public inbound ports. Assign the network security group to the virtual machine.
+1. Create [network security group (NSG)](https://learn.microsoft.com/azure/virtual-network/network-security-groups-overview) in the **hub location**.
+1. Create a Windows desktop virtual machine, in the **hub location**, with no public IP or public inbound ports. Assign the network security group to the virtual machine.
 
 > Naming recommendations:
 >
@@ -28,8 +28,8 @@ So, umm... we created a virtual machine we can't access. What was the point of t
 
 The solution:
 
-1. Create a subnet for Azure Bastion in the VNET in the **shared location** - the name and size need to be specific and you must figure out what they are
-1. Create a public IP address in the **shared location**
+1. Create a subnet for Azure Bastion in the VNET in the **hub location** - the name and size need to be specific and you must figure out what they are
+1. Create a public IP address in the **hub location**
 1. Create [Azure Bastion](https://learn.microsoft.com/azure/bastion/bastion-overview) resource using the newly created public IP address and add it to the virtual network
 
 > Naming recommendations:

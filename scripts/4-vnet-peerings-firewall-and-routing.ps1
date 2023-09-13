@@ -2,8 +2,8 @@
 
 param(
     [string]$TeamName = $env:TEAM_NAME,
-    [string]$PrimaryLocation = $env:PRIMARY_LOCATION,
-    [string]$SecondaryLocation = $env:SECONDARY_LOCATION,
+    [string]$EuLocation = $env:EU_LOCATION,
+    [string]$UsLocation = $env:US_LOCATION,
     [string]$HubLocation = $env:HUB_LOCATION
 )
 
@@ -18,8 +18,8 @@ $ResourceGroupNameHub = "rg-hub-${TeamName}-${Environment}"
 $ResourceGroupNameEu = "rg-${TeamName}-${Environment}-eu"
 $ResourceGroupNameUs = "rg-${TeamName}-${Environment}-us"
 
-$VnetNameEu = "vnet-${TeamName}-${Environment}-${PrimaryLocation}"
-$VnetNameUs = "vnet-${TeamName}-${Environment}-${SecondaryLocation}"
+$VnetNameEu = "vnet-${TeamName}-${Environment}-${EuLocation}"
+$VnetNameUs = "vnet-${TeamName}-${Environment}-${UsLocation}"
 $VnetNameHub = "vnet-${TeamName}-${Environment}-${HubLocation}"
 
 Write-Output "`nPeering virtual networks to using the hub and spoke model..."

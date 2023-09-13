@@ -2,5 +2,5 @@
 
 $env:TEAM_NAME = "newteam"
 $env:HUB_LOCATION = "swedencentral"
-$env:PRIMARY_LOCATION = "westeurope"
-$env:SECONDARY_LOCATION = "eastus"
+$env:EU_LOCATION = "westeurope"
+$env:US_LOCATION = "eastus"

@@ -2,5 +2,5 @@
 
 export TEAM_NAME=newteam
 export HUB_LOCATION=swedencentral
-export PRIMARY_LOCATION=westeurope
-export SECONDARY_LOCATION=eastus
+export EU_LOCATION=westeurope
+export US_LOCATION=eastus
