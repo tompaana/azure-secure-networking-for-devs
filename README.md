@@ -6,4 +6,5 @@
 1. [Virtual networks](./exercises/1-vnets.md)
 1. [Securing resources](./exercises/2-private-network.md)
 1. [Accessing secured resources](./exercises/3-bastion.md)
-1. [Final network configuration](./exercises/4-vnet-peerings-firewall-and-routing.md)
+1. [Virtual network peerings](./exercises/4-vnet-peerings.md)
+1. [Firewall and routing](./exercises/5-firewall-and-routing.md)
