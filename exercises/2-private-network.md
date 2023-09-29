@@ -78,8 +78,8 @@ graph
             end
         end
 
-        priv-dns-zone-blobs{"privatelink.azurewebsites.net"}
-        priv-dns-zone-sites{"privatelink.blob.core.windows.net"}
+        priv-dns-zone-blobs{"privatelink.blob.core.windows.net"}
+        priv-dns-zone-sites{"privatelink.azurewebsites.net"}
 
         st-hub---pep-st-hub
         nic-pep-st-hub-- attached to -->pep-st-hub
