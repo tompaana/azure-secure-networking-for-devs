@@ -85,6 +85,7 @@ graph
         st-eu("st{team name}deveu")
 
         asp-eu---app-eu
+        app-eu-- Storage Blob Data Contributor -->st-hub
         app-eu-- Storage Blob Data Contributor -->st-eu
     end
     subgraph rg-us["rg-{team name}-dev-us"]
@@ -95,6 +96,7 @@ graph
         st-us("st{team name}devus")
 
         asp-us---app-us
+        app-us-- Storage Blob Data Contributor -->st-hub
         app-us-- Storage Blob Data Contributor -->st-us
     end
 ```
